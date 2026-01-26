@@ -1,6 +1,32 @@
+:root {
+    /* RN Design Color Palette - Azul Claro */
+    --color-primary: #4FC3F7;
+    /* Azul claro primário (logo) */
+    --color-secondary: #0288D1;
+    /* Azul escuro */
+    --color-accent: #00BCD4;
+    /* Cyan accent */
+    --color-background: #E3F2FD;
+    /* Azul muito claro para bg */
+    --color-background-medium: #BBDEFB;
+    /* Azul claro médio */
+    --color-background-dark: #90CAF9;
+    /* Azul claro escuro */
+    --color-text: #0D47A1;
+    /* Azul escuro para texto */
+    --color-text-light: #546E7A;
+    /* Cinza azulado para texto secundário */
 
-body{
+    /* Legacy gradient variables */
+    --gradient-start: #E3F2FD;
+    --gradient-end: #90CAF9;
+    --gradient-bg: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+}
+
+body {
     margin: 0px;
-    overflow: hidden; /* Hide scrollbars */
+    overflow: hidden;
+    /* Hide scrollbars */
     cursor: wait;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
 }

@@ -5,39 +5,39 @@ import Image from 'next/image';
 
 const slider1 = [
     {
-        color: "#e3e5e7",
-        src: "c2.jpg"
+        color: "#1a1a2e",
+        src: "Subsolo.png"
     },
     {
-        color: "#d6d7dc",
-        src: "decimal.jpg"
+        color: "#f5e6d3",
+        src: "Amanda.png"
     },
     {
-        color: "#e3e3e3",
-        src: "funny.jpg"
+        color: "#36d1dc",
+        src: "Pandia.png"
     },
     {
-        color: "#21242b",
-        src: "google.jpg"
+        color: "#5b86e5",
+        src: "Palmiex.png"
     }
 ]
 
 const slider2 = [
     {
-        color: "#d4e3ec",
-        src: "maven.jpg"
+        color: "#5b86e5",
+        src: "Palmiex.png"
     },
     {
-        color: "#e5e0e1",
-        src: "panda.jpg"
+        color: "#36d1dc",
+        src: "Pandia.png"
     },
     {
-        color: "#d7d4cf",
-        src: "powell.jpg"
+        color: "#f5e6d3",
+        src: "Amanda.png"
     },
     {
-        color: "#e1dad6",
-        src: "wix.jpg"
+        color: "#1a1a2e",
+        src: "Subsolo.png"
     }
 ]
 
@@ -55,37 +55,37 @@ export default function Index() {
 
     return (
         <div ref={container} className={styles.slidingImages}>
-            <motion.div style={{x: x1}} className={styles.slider}>
-                    {
-                        slider1.map( (project, index) => {
-                            return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
-                                <div className={styles.imageContainer}>
-                                    <Image 
+            <motion.div style={{ x: x1 }} className={styles.slider}>
+                {
+                    slider1.map((project, index) => {
+                        return <div key={index} className={styles.project} style={{ backgroundColor: project.color }} >
+                            <div className={styles.imageContainer}>
+                                <Image
                                     fill={true}
                                     alt={"image"}
-                                    src={`/images/${project.src}`}/>
-                                </div>
+                                    src={`/images/${project.src}`} />
                             </div>
-                        })
-                    }
-                </motion.div>
-                <motion.div style={{x: x2}} className={styles.slider}>
-                    {
-                        slider2.map( (project, index) => {
-                            return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
-                                <div key={index} className={styles.imageContainer}>
-                                    <Image 
+                        </div>
+                    })
+                }
+            </motion.div>
+            <motion.div style={{ x: x2 }} className={styles.slider}>
+                {
+                    slider2.map((project, index) => {
+                        return <div key={index} className={styles.project} style={{ backgroundColor: project.color }} >
+                            <div key={index} className={styles.imageContainer}>
+                                <Image
                                     fill={true}
                                     alt={"image"}
-                                    src={`/images/${project.src}`}/>
-                                </div>
+                                    src={`/images/${project.src}`} />
                             </div>
-                        })
-                    }
-                </motion.div>
-                <motion.div style={{height}} className={styles.circleContainer}>
-                    <div className={styles.circle}></div>
-                </motion.div>
+                        </div>
+                    })
+                }
+            </motion.div>
+            <motion.div style={{ height }} className={styles.circleContainer}>
+                <div className={styles.circle}></div>
+            </motion.div>
         </div>
     )
 }

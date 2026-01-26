@@ -1,53 +1,95 @@
-.landing{
-    position: relative;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+.landing {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 
-    img{
-      object-fit: cover;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logoContainer {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .logo {
+      width: auto;
+      height: auto;
+      max-width: 150px;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.2));
+      animation: fadeInLogo 1s ease-out 2s both;
     }
-    
-    .sliderContainer{
-      position: absolute;
-      top: calc(100vh - 350px);
+  }
+
+  @keyframes fadeInLogo {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-    
-    .slider{
-      position: relative;
-      white-space: nowrap;
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-    
-    .slider p{
-      position: relative;
+  }
+
+  .sliderContainer {
+    position: absolute;
+    top: calc(100vh - 350px);
+  }
+
+  .slider {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .slider p {
+    position: relative;
+    margin: 0px;
+    background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+    /* Gradiente azul claro RN Design */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 230px;
+    font-weight: 500;
+    padding-right: 80px;
+    /* Increased padding to prevent text disappearing */
+  }
+
+  .slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+
+  .description {
+    position: absolute;
+    top: 35%;
+    left: 65%;
+    color: #0D47A1;
+    font-size: 24px;
+    font-weight: 300;
+
+    p {
       margin: 0px;
-      color: white;
-      font-size: 230px;
-      font-weight: 500;
-      padding-right: 50px;
+      margin-bottom: 10px;
     }
-    
-    .slider p:nth-of-type(2){
-      position: absolute;
-      left: 100%;
-      top: 0;
-    }
-  
-    .description{
-      position: absolute;
-      top: 35%;
-      left: 65%;
-      color: white;
-      font-size: 24px;
-      font-weight: 300;
-      p{
-        margin: 0px;
-        margin-bottom: 10px;
-      }
-      svg{
-        transform: scale(2);
-        margin-bottom: 100px;
+
+    svg {
+      transform: scale(2);
+      margin-bottom: 100px;
+
+      path {
+        fill: #0D47A1;
       }
     }
   }
-  
+}

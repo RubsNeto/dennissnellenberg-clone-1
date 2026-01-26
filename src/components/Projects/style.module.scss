@@ -1,12 +1,13 @@
-.projects{
+.projects {
     display: flex;
     align-items: center;
     padding-left: 200px;
     padding-right: 200px;
     flex-direction: column;
     margin-top: 300px;
+    color: #0D47A1; // Azul escuro para contraste
 
-    .body{
+    .body {
         max-width: 1400px;
         width: 100%;
         display: flex;
@@ -15,8 +16,8 @@
         justify-content: center;
         margin-bottom: 100px;
     }
-    
-    .modalContainer{
+
+    .modalContainer {
         height: 350px;
         width: 400px;
         position: fixed;
@@ -27,34 +28,38 @@
         overflow: hidden;
         z-index: 3;
     }
-    
-    .modalSlider{
+
+    .modalSlider {
         height: 100%;
         width: 100%;
         position: relative;
         transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
     }
-    
-    .modal{
+
+    .modal {
         height: 100%;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .modal img{
+
+    .modal img {
         height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
     }
-    
-    .cursor, .cursorLabel{
+
+    .cursor,
+    .cursorLabel {
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-color: #455CE9;
+        background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
         color: white;
         position: fixed;
-        z-index:3;
+        z-index: 3;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -62,11 +67,10 @@
         font-weight: 300;
         pointer-events: none;
     }
-    
-    .cursorLabel{
+
+    .cursorLabel {
         background-color: transparent;
     }
-    
-    
-}
 
+
+}

@@ -48,11 +48,24 @@ export default function Home() {
 			animate="enter"
 			className={styles.landing}
 		>
-			<Image src="/images/background.jpg" fill={true} alt="background" />
+			<Image src="/images/capa.png" fill={true} alt="Fundo RN Design" priority />
+
+			{/* Logo RN Design acima do texto infinito */}
+			<div className={styles.logoContainer}>
+				<Image
+					src="/images/Logo_RN.png"
+					alt="Logo RN Design"
+					width={300}
+					height={100}
+					priority
+					className={styles.logo}
+				/>
+			</div>
+
 			<div className={styles.sliderContainer}>
 				<div ref={slider} className={styles.slider}>
-					<p ref={firstText}>Freelance Developer -</p>
-					<p ref={secondText}>Freelance Developer -</p>
+					<p ref={firstText}>RN Design -</p>
+					<p ref={secondText}>RN Design -</p>
 				</div>
 			</div>
 			<div data-scroll data-scroll-speed={0.1} className={styles.description}>
@@ -68,8 +81,8 @@ export default function Home() {
 						fill="white"
 					/>
 				</svg>
-				<p>Freelance</p>
-				<p>Designer & Developer</p>
+				<p>Criativo</p>
+				<p>Design & Desenvolvimento</p>
 			</div>
 		</motion.main>
 	);

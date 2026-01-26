@@ -3,7 +3,11 @@ import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Preloader from '../components/Preloader';
+import Navbar from '../components/Navbar';
 import Landing from '../components/Landing';
+import About from '../components/About';
+import Services from '../components/Services';
+import Process from '../components/Process';
 import Projects from '../components/Projects';
 import Description from '../components/Description';
 import SlidingImages from '../components/SlidingImages';
@@ -13,29 +17,37 @@ export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect( () => {
+  useEffect(() => {
     (
       async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
 
-          setTimeout( () => {
-            setIsLoading(false);
-            document.body.style.cursor = 'default'
-            window.scrollTo(0,0);
-          }, 2000)
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.cursor = 'default'
+          window.scrollTo(0, 0);
+        }, 2000)
       }
     )()
   }, [])
 
   return (
     <main className={styles.main}>
+      <Navbar />
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <Landing />
+      <div id="home">
+        <Landing />
+      </div>
+      <About />
+      <Services />
+      <Process />
+      <div id="work">
+        <Projects />
+      </div>
       <Description />
-      <Projects />
       <SlidingImages />
       <Contact />
     </main>

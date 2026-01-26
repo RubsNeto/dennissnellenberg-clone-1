@@ -1,37 +1,40 @@
-.project{
+.project {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 50px 100px 50px 100px;
-    border-top: 1px solid rgb(201, 201, 201);
+    border-top: 1px solid rgba(13, 71, 161, 0.2);
     cursor: pointer;
     transition: all 0.2s;
+    color: #0D47A1; // Azul escuro para contraste
 
-    h2{
+    h2 {
         font-size: 60px;
         margin: 0px;
         font-weight: 400;
         transition: all 0.4s;
+        color: #0D47A1;
     }
 
-    p{
+    p {
         transition: all 0.4s;
         font-weight: 300;
+        color: #546E7A; // Cinza azulado
     }
 
-    &:last-of-type{
-        border-bottom: 1px solid rgb(201, 201, 201);
+    &:last-of-type {
+        border-bottom: 1px solid rgba(13, 71, 161, 0.2);
     }
 
-    &:hover{
+    &:hover {
         opacity: 0.5;
 
-        h2{
+        h2 {
             transform: translateX(-10px);
         }
 
-        p{
+        p {
             transform: translateX(10px);
         }
     }
