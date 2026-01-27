@@ -23,7 +23,7 @@ export default function Index() {
 							<Image
 								fill={true}
 								alt={"image"}
-								src={`/images/background.jpg`}
+								src={`/images/minha_foto2.png`}
 							/>
 						</div>
 						<h2>Vamos trabalhar</h2>
@@ -50,10 +50,10 @@ export default function Index() {
 				</div>
 				<div className={styles.nav}>
 					<Rounded>
-						<p>contato@rndesign.com.br</p>
+						<p>rubensneto.016@gmail.com</p>
 					</Rounded>
 					<Rounded>
-						<p>+55 11 9 9999-9999</p>
+						<p>(62) 9 9929-9020</p>
 					</Rounded>
 				</div>
 				<div className={styles.info}>

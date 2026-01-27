@@ -3,9 +3,10 @@
     flex-direction: column;
     gap: 3vw;
     position: relative;
-    margin-top: 200px;
-    background-color: white;
+    padding: 100px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 50%, #0a0a0a 100%);
     z-index: 1;
+    overflow: hidden;
 
     .slider {
         display: flex;
@@ -20,14 +21,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 5%;
+                border-radius: 16px;
+                background: rgba(79, 195, 247, 0.05);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
 
             .imageContainer {
                 position: relative;
                 width: 80%;
                 height: 80%;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
                 img {
                     object-fit: contain;
+                    filter: grayscale(20%);
+                    transition: filter 0.4s ease;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+
+                    img {
+                        filter: grayscale(0%);
+                    }
                 }
             }
         }
@@ -42,10 +69,31 @@
             width: 120%;
             left: -10%;
             border-radius: 0 0 50% 50%;
-            background-color: white;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 100%);
             z-index: 1;
             position: absolute;
-            box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+            box-shadow:
+                0px 60px 80px rgba(0, 0, 0, 0.8),
+                0 0 100px rgba(79, 195, 247, 0.1);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .slidingImages {
+        padding: 60px 0;
+        gap: 2vw;
+
+        .slider {
+            gap: 2vw;
+
+            .project {
+                height: 30vw;
+            }
+        }
+
+        .circleContainer {
+            margin-top: 60px;
         }
     }
 }

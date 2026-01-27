@@ -69,3 +69,163 @@ h6 {
     font-family: var(--font-primary);
     font-weight: 900;
 }
+
+/* ============================================
+   VengeanceUI Components - GlowBorderCard
+   ============================================ */
+
+@property --glow-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes glow-angle-rotate {
+    to {
+        --glow-angle: 1turn;
+    }
+}
+
+.glow-conic {
+    border-image: conic-gradient(from var(--glow-angle),
+            var(--glow-color-1, #4FC3F7),
+            var(--glow-color-2, #29B6F6),
+            var(--glow-color-3, #03A9F4),
+            var(--glow-color-4, #0288D1),
+            var(--glow-color-5, #0277BD),
+            var(--glow-color-6, #01579B),
+            var(--glow-color-7, #4FC3F7),
+            var(--glow-color-8, #29B6F6),
+            var(--glow-color-9, #03A9F4),
+            var(--glow-color-10, #0288D1),
+            var(--glow-color-1, #4FC3F7)) 1;
+    animation: glow-angle-rotate var(--glow-animation-duration, 4s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glow-conic {
+        animation: none;
+    }
+}
+
+/* ============================================
+   VengeanceUI Components - FlipText
+   ============================================ */
+
+@keyframes flip {
+
+    0%,
+    100% {
+        transform: rotateX(0deg);
+    }
+
+    25%,
+    75% {
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes fade {
+
+    0%,
+    24.9% {
+        opacity: 1;
+    }
+
+    25%,
+    74.9% {
+        opacity: var(--opacity, 0);
+    }
+
+    75%,
+    100% {
+        opacity: 1;
+    }
+}
+
+.flip-char {
+    color: inherit;
+    -webkit-text-fill-color: transparent;
+    height: 1.2em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    animation: flip var(--flip-duration, 2.2s) var(--flip-delay, 0s) infinite ease;
+}
+
+.flip-char::before,
+.flip-char::after {
+    color: inherit;
+    -webkit-text-fill-color: currentColor;
+    content: attr(data-char);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    animation: fade var(--flip-duration, 2.2s) var(--flip-delay, 0s) infinite ease;
+}
+
+.flip-char::after {
+    transform: translate(-50%, -50%) translateZ(0.6em);
+}
+
+.flip-char::before {
+    transform: translate(-50%, -50%) rotateX(-90deg) translateZ(0.6em);
+    opacity: 0;
+    --opacity: 1;
+}
+
+/* ============================================
+   Smooth Scrolling & Hover Effects
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hover glow effect classe utilitária */
+.hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(79, 195, 247, 0.5);
+    transform: translateY(-5px);
+}
+
+/* Text gradient utility */
+.text-gradient {
+    background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animated underline for links */
+.animated-underline {
+    position: relative;
+}
+
+.animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #4FC3F7, #0288D1);
+    transition: width 0.3s ease;
+}
+
+.animated-underline:hover::after {
+    width: 100%;
+}
