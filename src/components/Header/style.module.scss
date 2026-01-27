@@ -15,33 +15,36 @@
         display: flex;
         cursor: pointer;
 
-        p {
-            margin: 0px;
+        .logoWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .logoImage {
+            transition: all 0.3s ease;
+        }
+
+        .logoText {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 1em;
+
+            p {
+                margin: 0;
+                font-size: 12px;
+                opacity: 0.8;
+            }
+        }
+
+        .copyright {
             transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
         }
 
-        .name {
-            display: flex;
-            position: relative;
-            overflow: hidden;
+        .designBy {
             white-space: nowrap;
-            margin-left: 5px;
-            transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-
-            p {
-                position: relative;
-                transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-
-                &:nth-of-type(2) {
-                    padding-left: 0.3em;
-                }
-
-                &:nth-of-type(3) {
-                    position: absolute;
-                    left: 120px;
-                    padding-left: 0.3em;
-                }
-            }
         }
 
         &:hover {
@@ -49,20 +52,8 @@
                 transform: rotate(360deg);
             }
 
-            .name {
-                padding-right: 30px;
-
-                .codeBy {
-                    transform: translateX(-100%);
-                }
-
-                .dennis {
-                    transform: translateX(-65px);
-                }
-
-                .snellenberg {
-                    transform: translateX(-65px);
-                }
+            .logoImage {
+                transform: scale(1.05);
             }
         }
     }

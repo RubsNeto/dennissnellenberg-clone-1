@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
+import Image from 'next/image';
 
 export default function Index() {
     const header = useRef(null);
@@ -36,11 +37,19 @@ export default function Index() {
         <>
             <div ref={header} className={styles.header}>
                 <div className={styles.logo}>
-                    <p className={styles.copyright}>©</p>
-                    <div className={styles.name}>
-                        <p className={styles.codeBy}>Design by</p>
-                        <p className={styles.dennis}>RN</p>
-                        <p className={styles.snellenberg}>Design</p>
+                    <div className={styles.logoWrapper}>
+                        <Image
+                            src="/images/Logo_RN.png"
+                            alt="RN Design"
+                            width={120}
+                            height={60}
+                            priority
+                            className={styles.logoImage}
+                        />
+                        <div className={styles.logoText}>
+                            <p className={styles.copyright}>©</p>
+                            <p className={styles.designBy}>Design by RN</p>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.nav}>

@@ -1,3 +1,28 @@
+/* Gotham Font Family */
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham_regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham_black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* RN Design Color Palette - Azul Claro */
     --color-primary: #4FC3F7;
@@ -21,6 +46,9 @@
     --gradient-start: #E3F2FD;
     --gradient-end: #90CAF9;
     --gradient-bg: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+
+    /* Font family */
+    --font-primary: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -29,4 +57,15 @@ body {
     /* Hide scrollbars */
     cursor: wait;
     background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
+    font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 900;
 }

@@ -11,8 +11,9 @@ export default function Home() {
 	const firstText = useRef(null);
 	const secondText = useRef(null);
 	const slider = useRef(null);
-	let xPercent = 0;
-	let direction = -1;
+	const xPercent = useRef(0);
+	const direction = useRef(-1);
+	const animationRef = useRef(null);
 
 	useLayoutEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -22,23 +23,31 @@ export default function Home() {
 				scrub: 0.25,
 				start: 0,
 				end: window.innerHeight,
-				onUpdate: (e) => (direction = e.direction * -1),
+				onUpdate: (e) => (direction.current = e.direction * -1),
 			},
 			x: "-500px",
 		});
-		requestAnimationFrame(animate);
+		animationRef.current = requestAnimationFrame(animate);
+
+		return () => {
+			if (animationRef.current) {
+				cancelAnimationFrame(animationRef.current);
+			}
+		};
 	}, []);
 
 	const animate = () => {
-		if (xPercent < -100) {
-			xPercent = 0;
-		} else if (xPercent > 0) {
-			xPercent = -100;
+		if (xPercent.current < -100) {
+			xPercent.current = 0;
+		} else if (xPercent.current > 0) {
+			xPercent.current = -100;
 		}
-		gsap.set(firstText.current, { xPercent: xPercent });
-		gsap.set(secondText.current, { xPercent: xPercent });
-		requestAnimationFrame(animate);
-		xPercent += 0.03 * direction;
+		if (firstText.current && secondText.current) {
+			gsap.set(firstText.current, { xPercent: xPercent.current });
+			gsap.set(secondText.current, { xPercent: xPercent.current });
+		}
+		xPercent.current += 0.05 * direction.current;
+		animationRef.current = requestAnimationFrame(animate);
 	};
 
 	return (
@@ -49,18 +58,6 @@ export default function Home() {
 			className={styles.landing}
 		>
 			<Image src="/images/capa.png" fill={true} alt="Fundo RN Design" priority />
-
-			{/* Logo RN Design acima do texto infinito */}
-			<div className={styles.logoContainer}>
-				<Image
-					src="/images/Logo_RN.png"
-					alt="Logo RN Design"
-					width={300}
-					height={100}
-					priority
-					className={styles.logo}
-				/>
-			</div>
 
 			<div className={styles.sliderContainer}>
 				<div ref={slider} className={styles.slider}>
@@ -81,8 +78,9 @@ export default function Home() {
 						fill="white"
 					/>
 				</svg>
-				<p>Criativo</p>
-				<p>Design & Desenvolvimento</p>
+				<p>Cientista da computação - UFJ</p>
+				<p>MBA Engenharia de software - USP</p>
+				<p>& Designer</p>
 			</div>
 		</motion.main>
 	);

@@ -3,7 +3,7 @@ import styles from './page.module.scss'
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import Preloader from '../components/Preloader';
-import Navbar from '../components/Navbar';
+
 import Landing from '../components/Landing';
 import About from '../components/About';
 import Services from '../components/Services';
@@ -34,7 +34,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Navbar />
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>

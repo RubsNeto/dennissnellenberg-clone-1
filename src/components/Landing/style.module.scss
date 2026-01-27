@@ -43,25 +43,28 @@
   .sliderContainer {
     position: absolute;
     top: calc(100vh - 350px);
+    left: 0;
+    width: 100vw;
+    overflow: visible;
   }
 
   .slider {
     position: relative;
     white-space: nowrap;
+    width: fit-content;
   }
 
   .slider p {
-    position: relative;
+    display: inline-block;
     margin: 0px;
     background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
-    /* Gradiente azul claro RN Design */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-size: 230px;
-    font-weight: 500;
-    padding-right: 80px;
-    /* Increased padding to prevent text disappearing */
+    font-weight: 600;
+    font-family: 'Gotham', sans-serif;
+    padding-right: 50px;
   }
 
   .slider p:nth-of-type(2) {
@@ -74,7 +77,7 @@
     position: absolute;
     top: 35%;
     left: 65%;
-    color: #0D47A1;
+    color: #4FC3F7;
     font-size: 24px;
     font-weight: 300;
 
@@ -88,7 +91,7 @@
       margin-bottom: 100px;
 
       path {
-        fill: #0D47A1;
+        fill: #4FC3F7;
       }
     }
   }
