@@ -54,25 +54,25 @@ export default function Index() {
                 </div>
                 <div className={styles.nav}>
                     <Magnetic>
-                        <div className={styles.el} onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <div className={styles.el} onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'auto' })}>
                             <a>Sobre Nós</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el} onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <div className={styles.el} onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'auto' })}>
                             <a>O que fazemos</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el} onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <div className={styles.el} onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'auto' })}>
                             <a>Projetos</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <div className={styles.el} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'auto' })}>
                             <a>Contato</a>
                             <div className={styles.indicator}></div>
                         </div>

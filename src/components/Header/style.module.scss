@@ -136,20 +136,22 @@
     transform: scale(0);
     position: fixed;
     right: 0px;
+    top: 0px;
     z-index: 4;
     display: none; // Hidden on desktop
 
     @media (max-width: 768px) {
-        display: block; // Show only on mobile
+        display: block !important; // Show only on mobile
+        transform: scale(1) !important; // Force visible on mobile - override GSAP
     }
 
     .button {
         position: relative;
-        margin: 20px;
-        width: 80px;
-        height: 80px;
+        margin: 15px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -194,5 +196,52 @@
             top: 0px;
         }
 
+    }
+}
+
+// Responsive - Tablet
+@media (max-width: 1024px) {
+    .header {
+        padding: 25px;
+
+        .nav {
+            .el {
+                padding: 10px;
+
+                a {
+                    font-size: 14px;
+                }
+            }
+
+            .ctaButton {
+                padding: 10px 18px;
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+// Responsive - Mobile
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+
+        .logo {
+            .logoWrapper {
+                gap: 4px;
+            }
+
+            .logoImage {
+                // max-width removido
+            }
+
+            .logoText {
+                display: none;
+            }
+        }
+
+        .nav {
+            display: none; // Hide nav on mobile, use burger menu
+        }
     }
 }

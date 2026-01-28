@@ -6,6 +6,7 @@
     background: linear-gradient(180deg, #0a0a0a 0%, #0f1419 50%, #0a0a0a 100%);
     position: relative;
     overflow: hidden;
+    contain: layout style paint;
 
     // Header
     .header {
@@ -94,6 +95,8 @@
         width: 100%;
         position: relative;
         transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        will-change: top;
+        transform: translateZ(0);
     }
 
     .modal {
