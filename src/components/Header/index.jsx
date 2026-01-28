@@ -16,9 +16,11 @@ export default function Index() {
     const pathname = usePathname();
     const button = useRef(null);
 
+
+    // Fecha o menu quando o pathname muda (navegação)
     useEffect(() => {
-        if (isActive) setIsActive(false)
-    }, [isActive])
+        setIsActive(false);
+    }, [pathname])
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)

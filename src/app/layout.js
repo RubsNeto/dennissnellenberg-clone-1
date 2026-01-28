@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'RN Design - Design & Development',
   description: 'RN Design - Transformando ideias em experiências digitais excepcionais',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }) {
