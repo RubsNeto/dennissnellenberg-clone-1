@@ -89,8 +89,8 @@ export default function About() {
                                     key={index}
                                     variants={wordVariants}
                                     className={`${styles.word} ${word === "experiências" || word === "inspiram"
-                                            ? styles.highlight
-                                            : ""
+                                        ? styles.highlight
+                                        : ""
                                         }`}
                                 >
                                     {word}
@@ -98,12 +98,6 @@ export default function About() {
                             ))}
                         </h2>
 
-                        <motion.div
-                            className={styles.titleUnderline}
-                            initial={{ scaleX: 0 }}
-                            animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        />
                     </div>
 
                     {/* Description Cards */}

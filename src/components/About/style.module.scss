@@ -120,18 +120,18 @@
                 height: 4px;
                 background: linear-gradient(90deg, #4FC3F7, #0288D1);
                 border-radius: 2px;
-                opacity: 0.6;
+                opacity: 0.8;
+                transform: scaleX(0);
+                transform-origin: left;
+                animation: underlineExpand 0.8s ease-out 0.4s forwards;
             }
         }
     }
 
-    .titleUnderline {
-        width: 150px;
-        height: 4px;
-        background: linear-gradient(90deg, #4FC3F7, #0288D1);
-        margin: 0 auto;
-        border-radius: 2px;
-        will-change: transform;
+    @keyframes underlineExpand {
+        to {
+            transform: scaleX(1);
+        }
     }
 
     // Description Cards - Removed heavy backdrop-filter

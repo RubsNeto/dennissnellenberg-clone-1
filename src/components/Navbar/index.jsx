@@ -58,6 +58,14 @@ export default function Navbar() {
                     <button onClick={() => scrollToSection('contact')} className={styles.link}>
                         Contato
                     </button>
+                    <a
+                        href="https://wa.me/5562999299020?text=Vim%20do%20site%20e%20gostaria%20de%20saber%20mais"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.ctaButton}
+                    >
+                        Entre em contato
+                    </a>
                 </div>
             </div>
         </motion.nav>

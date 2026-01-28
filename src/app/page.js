@@ -60,15 +60,21 @@ export default function Home() {
         <div id="home">
           <Landing />
         </div>
-        <About />
-        <Services />
+        <div id="about">
+          <About />
+        </div>
+        <div id="services">
+          <Services />
+        </div>
         <Process />
         <div id="work">
           <Projects />
         </div>
         <Description />
         <SlidingImages />
-        <Contact />
+        <div id="contact">
+          <Contact />
+        </div>
       </Suspense>
     </main>
   )

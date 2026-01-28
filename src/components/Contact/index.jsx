@@ -14,6 +14,11 @@ export default function Index() {
 	const x = useTransform(scrollYProgress, [0, 1], [0, 100])
 	const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
 	const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
+
+	const handleWhatsAppClick = () => {
+		window.open('https://wa.me/5562999299020?text=Vim%20do%20site%20e%20gostaria%20de%20saber%20mais', '_blank');
+	};
+
 	return (
 		<motion.div style={{ y }} ref={container} className={styles.contact}>
 			<div className={styles.body}>
@@ -30,7 +35,7 @@ export default function Index() {
 					</span>
 					<h2>juntos</h2>
 					<motion.div style={{ x }} className={styles.buttonContainer}>
-						<Rounded backgroundColor={"#334BD3"} className={styles.button}>
+						<Rounded backgroundColor={"#334BD3"} className={styles.button} onClick={handleWhatsAppClick}>
 							<p>Entre em contato</p>
 						</Rounded>
 					</motion.div>
@@ -71,17 +76,11 @@ export default function Index() {
 						<span>
 							<h3>Redes sociais</h3>
 							<Magnetic>
-								<p>Awwwards</p>
+								<a href="https://www.instagram.com/rubs_neto/" target="_blank" rel="noopener noreferrer">Instagram</a>
 							</Magnetic>
 						</span>
 						<Magnetic>
-							<p>Instagram</p>
-						</Magnetic>
-						<Magnetic>
-							<p>Dribbble</p>
-						</Magnetic>
-						<Magnetic>
-							<p>Linkedin</p>
+							<a href="https://www.linkedin.com/in/dev-rubens/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 						</Magnetic>
 					</div>
 				</div>

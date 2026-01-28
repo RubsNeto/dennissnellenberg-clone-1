@@ -42,7 +42,7 @@
 
   .sliderContainer {
     position: absolute;
-    top: calc(100vh - 350px);
+    top: calc(100vh - 30vh);
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -75,7 +75,7 @@
     font-size: 230px;
     font-weight: 600;
     font-family: 'Gotham', sans-serif;
-    padding-right: 50px;
+    padding-right: 100px;
   }
 
   .description {
@@ -93,11 +93,83 @@
 
     svg {
       transform: scale(2);
-      margin-bottom: 100px;
+      margin-bottom: 30px;
 
       path {
         fill: #4FC3F7;
       }
+    }
+  }
+
+  // Scroll Indicator
+  .scrollIndicator {
+    position: absolute;
+    right: 40px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 100;
+    opacity: 1;
+    animation: fadeInScroll 1s ease-out 2s both;
+
+    .scrollLine {
+      width: 2px;
+      height: 80px;
+      background: rgba(79, 195, 247, 0.3);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+
+      .scrollDot {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: #4FC3F7;
+        border-radius: 50%;
+        animation: scrollAnimation 2s ease-in-out infinite;
+        box-shadow: 0 0 10px rgba(79, 195, 247, 0.8);
+      }
+    }
+
+    span {
+      color: #4FC3F7;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+  }
+
+  @keyframes fadeInScroll {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollAnimation {
+
+    0%,
+    100% {
+      top: 0;
+      opacity: 1;
+    }
+
+    50% {
+      top: calc(100% - 6px);
+      opacity: 0.5;
     }
   }
 }

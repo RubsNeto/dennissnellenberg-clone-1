@@ -53,11 +53,37 @@
 
 body {
     margin: 0px;
-    overflow: hidden;
-    /* Hide scrollbars */
+    overflow-x: hidden;
+    overflow-y: auto;
     cursor: wait;
     background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 50%, #90CAF9 100%);
     font-family: var(--font-primary);
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4FC3F7 0%, #0288D1 100%);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #29B6F6 0%, #0277BD 100%);
+    box-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4FC3F7 #0a0a0a;
 }
 
 h1,

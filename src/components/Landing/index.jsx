@@ -30,7 +30,7 @@ export default function Home() {
 				</svg>
 				<p>Cientista da computação - UFJ</p>
 				<p>MBA Engenharia de software - USP</p>
-				<p>& Designer</p>
+				<p>Full stack developer & Designer</p>
 			</div>
 		</main>
 	);

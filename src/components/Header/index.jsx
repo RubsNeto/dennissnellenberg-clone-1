@@ -54,23 +54,37 @@ export default function Index() {
                 </div>
                 <div className={styles.nav}>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>Work</a>
+                        <div className={styles.el} onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <a>Sobre Nós</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>About</a>
+                        <div className={styles.el} onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <a>O que fazemos</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
                     <Magnetic>
-                        <div className={styles.el}>
-                            <a>Contact</a>
+                        <div className={styles.el} onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <a>Projetos</a>
                             <div className={styles.indicator}></div>
                         </div>
                     </Magnetic>
+                    <Magnetic>
+                        <div className={styles.el} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                            <a>Contato</a>
+                            <div className={styles.indicator}></div>
+                        </div>
+                    </Magnetic>
+                    <a
+                        href="https://wa.me/5562999299020?text=Vim%20do%20site%20e%20gostaria%20de%20saber%20mais"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.ctaButton}
+                    >
+                        Entre em contato
+                    </a>
                 </div>
             </div>
             <div ref={button} className={styles.headerButtonContainer}>
