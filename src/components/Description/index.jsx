@@ -31,7 +31,7 @@ export default function Index() {
 					A combinação da nossa paixão por design, código & inovação nos
 					posiciona em um lugar único no mundo do design digital.
 				</motion.p>
-				<div data-scroll data-scroll-speed={0.1}>
+				<div data-scroll data-scroll-speed={0.1} className={styles.buttonWrapper}>
 					<Rounded className={styles.button}>
 						<p>Sobre nós</p>
 					</Rounded>

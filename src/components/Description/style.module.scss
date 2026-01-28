@@ -20,6 +20,7 @@
 
     .body {
         max-width: 1200px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -62,6 +63,12 @@
             }
         }
 
+        .buttonWrapper {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
         .button {
             width: 180px;
             height: 180px;
@@ -74,7 +81,6 @@
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 40px rgba(79, 195, 247, 0.3);
-            align-self: flex-end;
 
             &:hover {
                 transform: scale(1.1);
